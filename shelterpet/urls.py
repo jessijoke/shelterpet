@@ -16,6 +16,10 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 
+from shelterpets.views import home_view, tweet_detail_view
+
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('', home_view),
+    path('shelterpets/<int:tweet_id>', tweet_detail_view)
 ]
